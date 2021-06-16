@@ -212,7 +212,9 @@ function selectOption(event) {
 function countItems() {
   activeCount = 0;
   completeCount = 0;
-  const checkbox = document.querySelectorAll(".items > .item > input");
+  const checkbox = document.querySelectorAll(
+    ".items > .item > input[type='checkbox']"
+  );
   for (let i = 0; i < checkbox.length; i++) {
     if (checkbox[i].checked) completeCount++;
     else activeCount++;
