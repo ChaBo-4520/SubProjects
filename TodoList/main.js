@@ -2,10 +2,13 @@
 var id_count = 1;
 // 이벤트 추가
 function Add_EventListeners() {
+  document.addEventListener("click", cancelItemDescription);
   input_text.addEventListener("keyup", enterkey);
   input_text.addEventListener("keyup", onFocus);
   list.addEventListener("mouseover", mouseOnItem);
   list.addEventListener("mouseout", mouseOutItem);
+  list.addEventListener("dblclick", editItemDescription);
+
   const clear_complete = document.querySelector(".clear-completed");
   clear_complete.addEventListener("click", clearComplete);
   filters.addEventListener("click", selectOption);
@@ -61,6 +64,11 @@ function Add_item(text) {
   <label for="item${id_count}" class="toggle"></label>
   <span>${text}</span>
   <button class="delete display"><i class="fas fa-times"></i></button>
+  <input
+    type="text"
+    class="edit-description display"
+    onkeydown="updateItemDescription(event)"
+  />
   `;
   list.appendChild(temp);
 
@@ -138,6 +146,34 @@ function mouseOutItem(event) {
   const target = event.target.closest("li").querySelector("button");
   target.classList.toggle("display");
   return;
+}
+
+// 더블클릭시 description을 수정할 수 있는 input 등장
+function editItemDescription(event) {
+  const parent = event.target.closest("li");
+  const new_description = parent.querySelector(".edit-description");
+  const old_description = parent.querySelector("span");
+
+  new_description.value = old_description.innerText;
+
+  new_description.classList.toggle("display");
+  new_description.focus();
+}
+function updateItemDescription(event) {
+  if (event.key == "Enter") {
+    const parent = event.target.closest("li");
+    const new_description = parent.querySelector(".edit-description");
+    const old_description = parent.querySelector("span");
+    old_description.innerText = new_description.value;
+    console.log(new_description.value);
+    new_description.classList.add("display");
+  }
+}
+function cancelItemDescription(event) {
+  const target = document.querySelectorAll(".edit-description");
+  for (let i = 0; i < target.length; i++) {
+    target[i].classList.add("display");
+  }
 }
 // About Footer
 // =============================================

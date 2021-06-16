@@ -145,10 +145,11 @@ p {
   padding: var(--base-space);
   font-size: var(--font-medium);
   display: flex;
+  position: relative;
   align-items: center;
 }
 
-.item > input {
+.item > input[type="checkbox"] {
   display: none;
 }
 .item > input[type="checkbox"] + .toggle {
@@ -175,11 +176,24 @@ p {
   width: 80%;
   padding-left: calc(var(--font-medium) + var(--base-space));
 }
+.item > input[type="text"] {
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-medium);
+  width: 83%;
+  height: 100%;
+  left: 0;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: white;
+  margin-left: calc(var(--font-medium) + var(--base-space) + var(--base-space));
+  padding-right: calc(var(--font-medium) + 3 * var(--base-space));
+  border: 1px solid black;
+}
 .item > .delete {
   font-size: var(--font-medium);
   margin: 0 auto;
 }
-.item > .display {
+.display {
   display: none;
 }
 
