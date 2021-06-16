@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/4f51fc199c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="todo-app">
+      <!-- header -->
+      <section class="header">
+        <h1>Todo List</h1>
+      </section>
+      <!-- main -->
+      <section class="main">
+        <!-- input -->
+        <div class="input">
+          <button id="toggle-all">
+            <i class="fas fa-check"></i>
+          </button>
+          <input
+            type="text"
+            class="new-todo"
+            placeholder="새로운 할 일을 추가해보세요!"
+            autofocus
+          />
+          <button id="clear-text">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <!-- list -->
+        <div class="items"></div>
+
+        <!-- footer -->
+        <div class="footer">
+          <span class="todo-count"
+            ><strong class="counting">0</strong> items left</span
+          >
+          <div class="filters">
+            <button
+              class="all selected-option"
+              data-key="option"
+              data-value="all"
+            >
+              All
+            </button>
+            <button class="active" data-key="option" data-value="active">
+              Active
+            </button>
+            <button class="completed" data-key="option" data-value="completed">
+              Completed
+            </button>
+          </div>
+          <span class="clear-completed">Clear-completed</span>
+        </div>
+      </section>
+      <section class="footer">
+        <p id="app-info">Created by Boram Cha</p>
+        <a href="https://github.com/ChaBo-4520"
+          ><i class="fab fa-github"></i> https://github.com/ChaBo-4520</a
+        >
+      </section>
+    </div>
+  </body>
+</html>
