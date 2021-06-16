@@ -142,11 +142,12 @@ function selectOption(event) {
   const key = event.target.dataset.key;
   const option = event.target.dataset.value;
   if (key == null || option == null) return;
-  // 수정!!!!!!! 추후에 querySelectorAll로 고칠것
+
   // 선택된 옵션외에는 selected-option 클래스 제거
-  for (let i = 0; i < filters.childNodes.length; i++) {
-    const child = filters.childNodes[i];
-    if (child.dataset == null) continue;
+  const option_btns = document.querySelectorAll(".filters button");
+
+  for (let i = 0; i < option_btns.length; i++) {
+    const child = option_btns[i];
     if (child.dataset.value == option) child.classList.add("selected-option");
     else child.classList.remove("selected-option");
   }
