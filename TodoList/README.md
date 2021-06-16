@@ -39,9 +39,10 @@
 
 ## 업데이트 사항
 
-- **2021.06.13**
-
-  - 헤더와 목록의 font-style을 Google font의 [Roboto](https://fonts.google.com/specimen/Roboto)로 변경 완료
+- **2021.06.13** - (Update)
+- 헤더와 목록의 font-style을 Google font의 [Roboto](https://fonts.google.com/specimen/Roboto)로 변경 완료
+- **2021.06.16** - (Refactoring)
+  - filter버튼에 접근하는 메소드를 chlidnodes에서 querySelectorAll로 변경
 
 ## 추가 예정
 
