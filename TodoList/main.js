@@ -4,6 +4,8 @@ var id_count = 1;
 function Add_EventListeners() {
   input_text.addEventListener("keyup", enterkey);
   input_text.addEventListener("keyup", onFocus);
+  list.addEventListener("mouseover", mouseOnItem);
+  list.addEventListener("mouseout", mouseOutItem);
   const clear_complete = document.querySelector(".clear-completed");
   clear_complete.addEventListener("click", clearComplete);
   filters.addEventListener("click", selectOption);
@@ -58,7 +60,7 @@ function Add_item(text) {
   <input type="checkbox" id="item${id_count}" />
   <label for="item${id_count}" class="toggle"></label>
   <span>${text}</span>
-  <button class="delete"><i class="fas fa-times"></i></button>
+  <button class="delete display"><i class="fas fa-times"></i></button>
   `;
   list.appendChild(temp);
 
@@ -121,6 +123,21 @@ function displayItems(option) {
       } else li[i].style.display = "none";
     }
   }
+}
+
+// 리스트아이템에 호버링했을때, deletebtn이 나오도록 하는 함수 ( 이벤트위임 )
+
+// 마우스가 li안의 요소안에서 움직일때는 display가 두번씩 토글되기때문에 delete버튼이 계속 보인다
+// 마우스가 li밖의 요소로 이동하면 display가 한번 토글되기 때문에 사라진다.(이렇게 구현하는 것이 맞는지?)
+function mouseOnItem(event) {
+  const target = event.target.closest("li").querySelector("button");
+  target.classList.toggle("display");
+  return;
+}
+function mouseOutItem(event) {
+  const target = event.target.closest("li").querySelector("button");
+  target.classList.toggle("display");
+  return;
 }
 // About Footer
 // =============================================

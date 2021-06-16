@@ -179,6 +179,9 @@ p {
   font-size: var(--font-medium);
   margin: 0 auto;
 }
+.item > .display {
+  display: none;
+}
 
 .main .footer {
   position: relative;
