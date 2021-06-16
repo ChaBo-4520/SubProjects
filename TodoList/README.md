@@ -44,13 +44,20 @@
     - 헤더와 목록의 font-style을 Google font의 [Roboto](https://fonts.google.com/specimen/Roboto)로 변경
 - **2021.06.16** 
   - **Refactoring**
-    - filter버튼에 접근하는 메소드를 chlidnodes에서 querySelectorAll로 변경
+    - filter버튼에 접근하는 메소드를 chlidnodes에서 querySelectorAll로 변경**
   - **Update**
     - List에 있는 삭제 버튼을 hover시 나타나토록 변경
+- **2021.06.17**
+  - **Update**
+    - List에 있는 목록의 내용을 더블클릭을 이용하여 수정할 수 있도록 기능 추가
 
 ## 추가 예정
 
-- List에 있는 목록의 내용을 더블클릭을 이용하여 수정할 수 있도록 수정할 것
+- ~~List에 있는 목록의 내용을 더블클릭을 이용하여 수정할 수 있도록 수정할 것~~
 - ~~List에 있는 삭제 버튼을 hover시 나타나토록 변경할 것~~
-- 목록 체크시 나타나는 이미지 디자인 수정
 - 목록 체크시 내용에 취소선(~~취소선~~)삽입
+
+## 수정 할 내용
+
+- List 내용 수정시 나타나는 input 디자인
+- 목록 체크시 나타나는 이미지 디자인 수정
