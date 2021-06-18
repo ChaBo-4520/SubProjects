@@ -101,7 +101,9 @@ function DeleteItem(event) {
 // 리스트에 보여질 item을 결정하는 함수
 function displayItems(option) {
   // 필터적용
-  const checkbox = document.querySelectorAll(".items > .item > input");
+  const checkbox = document.querySelectorAll(
+    ".items > .item > input[type='checkbox']"
+  );
   const li = document.querySelectorAll(".items > .item");
   let option_state;
   switch (option) {
@@ -115,7 +117,7 @@ function displayItems(option) {
       option_state = 2;
       break;
   }
-
+  console.log(checkbox);
   for (let i = 0; i < checkbox.length; i++) {
     if (option_state == 0) {
       // All
